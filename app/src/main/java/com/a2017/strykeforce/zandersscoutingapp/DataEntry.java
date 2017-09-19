@@ -1,5 +1,5 @@
 package com.a2017.strykeforce.zandersscoutingapp;
-
+//comment
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
