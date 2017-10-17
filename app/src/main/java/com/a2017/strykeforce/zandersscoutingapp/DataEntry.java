@@ -35,7 +35,39 @@ public class DataEntry extends AppCompatActivity {
         {41, 42, 43, 44, 45, 46},
         {51, 52, 53, 54, 55, 56}
     };
+    public static String student_numbers[][] =
+            {
+                    {"12550", "Abby Kuespert"},
+                    {"521688", "Gillian Chapman"},
+                    {"535835", "Heather Leany"},
+                    {"521688", "Katheryn Eberhardt"},
+                    {"10459", "Collin Rutz"},
+                    {"527132", "Anna Gaishin"},
+                    {"522731", "Ray Perkins"},
+                    {"527222", "Steven Market"},
+                    {"12515", "Luis Hernandez"},
+                    {"11917", "Mitchell Brunsting"},
+                    {"10864", "Noah Brooks"},
+                    {"527290", "Nick Zimanski"},
+                    {"12558", "Cameron Haynes"},
+                    {"527127", "Will Fisbeck"},
+                    {"527549", "Liam Hodgson"},
+                    {"533156", "Zach Conybeare"},
+                    {"12418", "Noah Kalkman"},
+                    {"533132", "Jonathan Peugh"},
+                    {"13078", "Zoe Downey"},
+                    {"533237", "Dashiel Matlock"},
+                    {"527194", "Josh Hawkins"},
+                    {"11362", "Mac Bowman"},
+                    {"515906", "Kai Borah"},
+                    {"516071", "Graham Strzynski"},
+                    {"11918", "Joshua Dixon"}
+
+            };
     public static int match_index, team_index;
+    public int kids;
+
+
 
     void set_spinner_items_by_id(Spinner spinner, int arrayid)
     {
@@ -90,11 +122,12 @@ public class DataEntry extends AppCompatActivity {
                         R.id.data_entry_tele_picks_gears_off_ground_switch,
                         R.id.data_entry_tele_defence_interferes_switch,
                         R.id.data_entry_end_activated_touchpad_switch,
-                        R.id.data_entry_other_played_defense_switch
+                        R.id.data_entry_other_played_defense_switch,
+                        R.id.data_entry_auton_test_metric_switch
                 );
         set_all_edit_texts_to_empty_string
                 (
-                        R.id.data_entry_other_scout_initials_edit_text,
+                        R.id.data_entry_other_scout_number_edit_text,
                         R.id.data_entry_other_notes_edit_text
                 );
         ((SeekBar)findViewById(R.id.data_entry_end_rope_climb_time_seek_bar)).setProgress(15);
@@ -161,21 +194,23 @@ public class DataEntry extends AppCompatActivity {
     }
     void data_entry_form_on_click_done_button(View v)
     {
-        boolean auton_cross_base_line_value, auton_low_goal_dumped_value;
+        boolean auton_cross_base_line_value, auton_low_goal_dumped_value, auton_test_metric_value;
         String auton_gear_placement_value;
         String autohigh;
         boolean tele_picks_gears_off_ground_value;
         String tele_high_goals_scored_value;
         boolean tele_defence_interferes_value, end_activated_touchpad_value, other_played_defense_value;
-        String scoutName, notes;
+        String scoutName = "";
+        String scoutNumber;
+        String notes;
         int end_rope_climb_time_value, tele_low_goal_value, tele_gears_delievered_value;
         EditText deahgset = (EditText) findViewById(R.id.data_entry_auton_high_goals_scored_edit_text);
         autohigh = deahgset.getText().toString();
-        EditText deosiet = (EditText) findViewById(R.id.data_entry_other_scout_initials_edit_text);
-        scoutName = deosiet.getText().toString();
-        if(scoutName.isEmpty())
+        EditText deosiet = (EditText) findViewById(R.id.data_entry_other_scout_number_edit_text);
+        scoutNumber = deosiet.getText().toString();
+        if(scoutNumber.isEmpty())
         {
-            scoutName = ".";
+            scoutName = "N/A";
         }
         EditText deonet = (EditText) findViewById(R.id.data_entry_other_notes_edit_text);
         notes = deonet.getText().toString();
@@ -185,6 +220,8 @@ public class DataEntry extends AppCompatActivity {
         }
         EditText dethgset = (EditText) findViewById(R.id.data_entry_tele_high_goals_scored_edit_text);
         tele_high_goals_scored_value = dethgset.getText().toString();
+        Switch deatms = (Switch) findViewById(R.id.data_entry_auton_test_metric_switch);
+        auton_test_metric_value = deatms.isChecked();
         Switch deacbls = (Switch) findViewById(R.id.data_entry_auton_cross_base_line_switch);
         auton_cross_base_line_value = deacbls.isChecked();
         Spinner deagps = (Spinner) findViewById(R.id.data_entry_auton_gear_placement_spinner);
@@ -205,6 +242,12 @@ public class DataEntry extends AppCompatActivity {
         tele_low_goal_value = Integer.valueOf(detlget.getText().toString());
         EditText detgdet = (EditText) findViewById(R.id.data_entry_tele_gears_delievered_edit_text);
         tele_gears_delievered_value = Integer.valueOf(detgdet.getText().toString());
+        kids = 47;
+        for (int i=0; i<kids; i++) {
+            if (scoutNumber == student_numbers[i][0]) {
+                scoutName = student_numbers[i][1];
+            }
+        }
         String qr_code =  "Scout ID: " + (team_index + 1) + "\t"
                 +"Team: " + (team_matches[match_index][team_index]) + "\t"
                 +"Match: " + (match_index+1) + "\t"
@@ -216,6 +259,7 @@ public class DataEntry extends AppCompatActivity {
                 +"Auto Low: " + auton_low_goal_dumped_value + "\t"
                 +"Auto Gear: " + auton_gear_placement_value + "\t"
                 +"Crosses base line: "+ auton_cross_base_line_value+ "\t"
+                +"Test Metric: "+ auton_test_metric_value + "\t"
                 +"Can pick gears off ground: " + tele_picks_gears_off_ground_value + "\t"
                 +"On defence: " + other_played_defense_value + "\t"
                 +"Defended shooting high: " + tele_defence_interferes_value + "\t"

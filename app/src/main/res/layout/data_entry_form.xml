@@ -5,6 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.a2017.strykeforce.zandersscoutingapp.DataEntry">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
+            android:weightSum="1">
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20sp"
@@ -40,237 +55,261 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_weight="1.36"
                 android:background="#DFD"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
                     android:text="Autonomous Mode"
+                    android:textAlignment="center"
                     android:textSize="@dimen/data_entry_sections_title_text_size"
-                    />
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Test Metric: "
+                        android:textSize="30sp" />
+
+                    <Switch
+                        android:id="@+id/data_entry_auton_test_metric_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cross Base Line:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Switch
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:id="@+id/data_entry_auton_cross_base_line_switch"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="High Goals Scored:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <EditText
+                        android:id="@+id/data_entry_auton_high_goals_scored_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:minEms="9"
-                        android:id="@+id/data_entry_auton_high_goals_scored_edit_text"
-                        />
+                        android:minEms="9" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gear Placement:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Spinner
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/data_entry_auton_gear_placement_spinner"
-                    />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Low Goal Dumped:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Switch
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:id="@+id/data_entry_auton_low_goal_dumped_switch"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20sp"
                 />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:background="#FFD"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
                     android:text="Tele-Operated Mode"
+                    android:textAlignment="center"
                     android:textSize="@dimen/data_entry_sections_title_text_size"
-                    />
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Low Goal Loads:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/data_entry_tele_decrement_low_goal_loads_button"
-                        android:text="- 1"
-                        />
-                    <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="- 1" />
+
+                    <EditText
                         android:id="@+id/data_entry_tele_low_goal_edit_text"
-                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:inputType="number"
                         android:minEms="5"
-                        />
+                        android:textAlignment="center" />
+
                     <Button
+                        android:id="@+id/data_entry_tele_increment_low_goal_loads_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/data_entry_tele_increment_low_goal_loads_button"
-                        android:text="+ 1"
-                        />
+                        android:text="+ 1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gears Delievered:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/data_entry_tele_decrement_gears_delievered_button"
-                        android:text="- 1"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- 1" />
+
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:inputType="number"
                         android:id="@+id/data_entry_tele_gears_delievered_edit_text"
-                        android:minEms="5"
-                        />
-                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:minEms="5"
+                        android:textAlignment="center" />
+
+                    <Button
                         android:id="@+id/data_entry_tele_increment_gears_delievered_button"
-                        android:text="+ 1"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ 1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Picks gears off ground?"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Switch
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/data_entry_tele_picks_gears_off_ground_switch"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="High Goals Scored:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <EditText
+                        android:id="@+id/data_entry_tele_high_goals_scored_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:minEms="9"
-                        android:id="@+id/data_entry_tele_high_goals_scored_edit_text"
-                        />
+                        android:minEms="9" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Defence Interferes?"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:textSize="@dimen/data_entry_property_textsize" />
+
                     <Switch
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:id="@+id/data_entry_tele_defence_interferes_switch"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20sp"
-                />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -334,30 +373,33 @@
                 android:orientation="vertical"
                 android:background="#DDF"
                 >
+
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Other"
-                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:textSize="@dimen/data_entry_sections_title_text_size"
-                    />
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     >
+
                     <TextView
+                        android:id="@+id/data_entry_other_scout_number_edit_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scout Initials:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:text="Student Number:"
+                        android:textSize="@dimen/data_entry_property_textsize" />
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/data_entry_other_scout_initials_edit_text"
+                        android:id="@+id/data_entry_other_scout_number_edit_text"
                         android:minEms="5"
                         />
                 </LinearLayout>
@@ -379,18 +421,19 @@
                         android:id="@+id/data_entry_other_played_defense_switch"
                         />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/data_entry_property_height"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Notes/Feedback:"
-                        android:textSize="@dimen/data_entry_property_textsize"
-                        />
+                        android:text="Comments:"
+                        android:textSize="@dimen/data_entry_property_textsize" />
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -399,10 +442,11 @@
                         />
                 </LinearLayout>
             </LinearLayout>
+
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20sp"
-                />
+                android:layout_height="20sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

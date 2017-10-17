@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/NERDScout.iml" filepath="$PROJECT_DIR$/NERDScout.iml" />
       <module fileurl="file://$PROJECT_DIR$/ScoutApp.iml" filepath="$PROJECT_DIR$/ScoutApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/scout2017.iml" filepath="$PROJECT_DIR$/scout2017.iml" />
       <module fileurl="file://$PROJECT_DIR$/strykescout.iml" filepath="$PROJECT_DIR$/strykescout.iml" />
