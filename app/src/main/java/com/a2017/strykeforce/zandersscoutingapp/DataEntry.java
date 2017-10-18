@@ -89,14 +89,17 @@ public class DataEntry extends AppCompatActivity {
                         R.id.data_entry_tele_picks_gears_off_ground_switch,
                         R.id.data_entry_tele_defence_interferes_switch,
                         R.id.data_entry_end_activated_touchpad_switch,
-                        R.id.data_entry_other_played_defense_switch
+                        R.id.data_entry_other_played_defense_switch,
+                        R.id.data_entry_auton_test_metric_switch
                 );
         set_all_edit_texts_to_empty_string
                 (
                         R.id.data_entry_other_scout_initials_edit_text,
-                        R.id.data_entry_other_notes_edit_text
+                        R.id.data_entry_other_notes_edit_text,
+                        R.id.data_entry_auto_test_metric_edit_text
                 );
         ((SeekBar)findViewById(R.id.data_entry_end_rope_climb_time_seek_bar)).setProgress(15);
+        ((SeekBar)findViewById(R.id.data_entry_tele_test_metric_slider)).setProgress(15);
     }
     void initalize_data_entry_form_ui()
     {
@@ -160,14 +163,15 @@ public class DataEntry extends AppCompatActivity {
     }
     void data_entry_form_on_click_done_button(View v)
     {
-        boolean auton_cross_base_line_value, auton_low_goal_dumped_value;
+        boolean auton_cross_base_line_value, auton_low_goal_dumped_value, auton_test_metric_value;
         String auton_gear_placement_value;
         String autohigh;
+        String auton_test_text_metric_value;
         boolean tele_picks_gears_off_ground_value;
         String tele_high_goals_scored_value;
         boolean tele_defence_interferes_value, end_activated_touchpad_value, other_played_defense_value;
         String scoutName, notes;
-        int end_rope_climb_time_value, tele_low_goal_value, tele_gears_delievered_value;
+        int end_rope_climb_time_value, tele_low_goal_value, tele_gears_delievered_value, tele_test_metric_slider_value;
         EditText deahgset = (EditText) findViewById(R.id.data_entry_auton_high_goals_scored_edit_text);
         autohigh = deahgset.getText().toString();
         EditText deosiet = (EditText) findViewById(R.id.data_entry_other_scout_initials_edit_text);
@@ -184,6 +188,10 @@ public class DataEntry extends AppCompatActivity {
         }
         EditText dethgset = (EditText) findViewById(R.id.data_entry_tele_high_goals_scored_edit_text);
         tele_high_goals_scored_value = dethgset.getText().toString();
+        EditText attm = (EditText) findViewById(R.id.data_entry_auto_test_metric_edit_text);
+        auton_test_text_metric_value = attm.getText().toString();
+        Switch deatms = (Switch) findViewById(R.id.data_entry_auton_test_metric_switch);
+        auton_test_metric_value = deatms.isChecked();
         Switch deacbls = (Switch) findViewById(R.id.data_entry_auton_cross_base_line_switch);
         auton_cross_base_line_value = deacbls.isChecked();
         Spinner deagps = (Spinner) findViewById(R.id.data_entry_auton_gear_placement_spinner);
@@ -198,6 +206,8 @@ public class DataEntry extends AppCompatActivity {
         other_played_defense_value = deopds.isChecked();
         Switch detdis = (Switch) findViewById(R.id.data_entry_tele_defence_interferes_switch);
         tele_defence_interferes_value = detdis.isChecked();
+        SeekBar dettms = (SeekBar)findViewById((R.id.data_entry_tele_test_metric_slider));
+        tele_test_metric_slider_value = dettms.getProgress();
         SeekBar deerctsb = (SeekBar) findViewById(R.id.data_entry_end_rope_climb_time_seek_bar);
         end_rope_climb_time_value = deerctsb.getProgress();
         EditText detlget = (EditText) findViewById(R.id.data_entry_tele_low_goal_edit_text);
@@ -215,6 +225,9 @@ public class DataEntry extends AppCompatActivity {
                 +"Auto Low: " + auton_low_goal_dumped_value + "\t"
                 +"Auto Gear: " + auton_gear_placement_value + "\t"
                 +"Crosses base line: "+ auton_cross_base_line_value+ "\t"
+                +"Test Metric: "+ auton_test_metric_value + "\t"
+                +"Test Text Metric: "+ auton_test_text_metric_value + "\t"
+                +"Test Slider Metric: "+  (tele_test_metric_slider_value)
                 +"Can pick gears off ground: " + tele_picks_gears_off_ground_value + "\t"
                 +"On defence: " + other_played_defense_value + "\t"
                 +"Defended shooting high: " + tele_defence_interferes_value + "\t"
